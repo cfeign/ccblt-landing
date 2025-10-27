@@ -1,0 +1,43 @@
+---
+interface Props {
+  size?: number;
+  class?: string;
+}
+
+const { size = 48, class: className = "" } = Astro.props;
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 48 48"
+  width={size}
+  height={size}
+  class={className}
+  fill="none"
+>
+  <defs>
+    <linearGradient id="lightningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34d399;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Lightning bolt main shape -->
+  <path
+    d="M 24 6 L 28 18 L 38 18 L 22 36 L 26 26 L 14 26 Z"
+    fill="url(#lightningGradient)"
+    opacity="0.9"
+  />
+
+  <!-- Highlight on bolt -->
+  <path d="M 24 10 L 26 16 L 20 16 Z" fill="white" opacity="0.3" />
+
+  <!-- Energy glow effect -->
+  <circle cx="24" cy="20" r="2" fill="url(#lightningGradient)" opacity="0.5" />
+  <circle cx="18" cy="28" r="1.5" fill="url(#lightningGradient)" opacity="0.4" />
+  <circle cx="30" cy="24" r="1" fill="url(#lightningGradient)" opacity="0.3" />
+
+  <!-- Speed lines -->
+  <line x1="32" y1="12" x2="38" y2="12" stroke="url(#lightningGradient)" stroke-width="1" opacity="0.5" stroke-linecap="round" />
+  <line x1="34" y1="32" x2="40" y2="32" stroke="url(#lightningGradient)" stroke-width="1" opacity="0.4" stroke-linecap="round" />
+</svg>

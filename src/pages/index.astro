@@ -1,6 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import ArtificialIntelligence from '../components/icons/ArtificialIntelligence.astro';
+import Terminal from '../components/icons/Terminal.astro';
+import Chart from '../components/icons/Chart.astro';
+import Database from '../components/icons/Database.astro';
+import Lightning from '../components/icons/Lightning.astro';
+import Lock from '../components/icons/Lock.astro';
+import Home from '../components/icons/Home.astro';
+import OpenSource from '../components/icons/OpenSource.astro';
+import Shield from '../components/icons/Shield.astro';
+import Zap from '../components/icons/Zap.astro';
 ---
 
 <Layout
@@ -88,42 +98,54 @@ import Hero from '../components/Hero.astro';
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Feature 1 -->
         <div class="p-6 border border-emerald-500/50 rounded-lg hover:border-emerald-500 transition-smooth glow-box bg-emerald-500/5">
-          <div class="text-3xl mb-4">🤖</div>
+          <div class="mb-4 inline-block">
+            <ArtificialIntelligence size={48} />
+          </div>
           <h3 class="text-xl font-bold mb-3 text-emerald-400">Claude Code Skill</h3>
           <p class="text-gray-400">Built-in Claude Code skill for instant log diagnostics. Ask Claude to analyze errors—no context overhead, instant results.</p>
         </div>
 
         <!-- Feature 2 -->
         <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <div class="text-3xl mb-4">⌨️</div>
+          <div class="mb-4 inline-block">
+            <Terminal size={48} />
+          </div>
           <h3 class="text-xl font-bold mb-3">CLI Tools</h3>
           <p class="text-gray-400"><code class="bg-gray-700 px-2 py-1 rounded text-xs">bun run check errors</code> - Quick commands for common queries. No context switching, instant results.</p>
         </div>
 
         <!-- Feature 3 -->
         <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <div class="text-3xl mb-4">📊</div>
+          <div class="mb-4 inline-block">
+            <Chart size={48} />
+          </div>
           <h3 class="text-xl font-bold mb-3">Console & Network</h3>
           <p class="text-gray-400">Unified logging for console messages, errors, rejections, and network requests. One place for everything.</p>
         </div>
 
         <!-- Feature 4 -->
         <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <div class="text-3xl mb-4">💾</div>
+          <div class="mb-4 inline-block">
+            <Database size={48} />
+          </div>
           <h3 class="text-xl font-bold mb-3">SQL Queries</h3>
           <p class="text-gray-400">Query logs with SQL. Find exactly what you need in milliseconds. REST API for integration with other tools.</p>
         </div>
 
         <!-- Feature 5 -->
         <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <div class="text-3xl mb-4">⚡</div>
+          <div class="mb-4 inline-block">
+            <Lightning size={48} />
+          </div>
           <h3 class="text-xl font-bold mb-3">Lightweight</h3>
           <p class="text-gray-400">Less than 1ms overhead. 100x faster than browser-tools MCP. No context bloat. Bespoke, not generic.</p>
         </div>
 
         <!-- Feature 6 -->
         <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <div class="text-3xl mb-4">🔒</div>
+          <div class="mb-4 inline-block">
+            <Lock size={48} />
+          </div>
           <h3 class="text-xl font-bold mb-3">100% Local</h3>
           <p class="text-gray-400">Zero cloud. Zero telemetry. All data stays on your machine. Built for privacy and security.</p>
         </div>
@@ -238,19 +260,27 @@ bun run query -- "SELECT * FROM console_logs"</code></pre>
       <!-- Trust badges -->
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
         <div>
-          <div class="text-2xl mb-2">🏠</div>
+          <div class="mb-2 inline-block">
+            <Home size={32} />
+          </div>
           <p class="text-sm text-gray-400">100% Local</p>
         </div>
         <div>
-          <div class="text-2xl mb-2">🔓</div>
+          <div class="mb-2 inline-block">
+            <OpenSource size={32} />
+          </div>
           <p class="text-sm text-gray-400">Open Source</p>
         </div>
         <div>
-          <div class="text-2xl mb-2">🛡️</div>
+          <div class="mb-2 inline-block">
+            <Shield size={32} />
+          </div>
           <p class="text-sm text-gray-400">MIT Licensed</p>
         </div>
         <div>
-          <div class="text-2xl mb-2">⚡</div>
+          <div class="mb-2 inline-block">
+            <Zap size={32} />
+          </div>
           <p class="text-sm text-gray-400">Zero Telemetry</p>
         </div>
       </div>
