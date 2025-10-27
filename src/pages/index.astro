@@ -14,33 +14,33 @@ import Hero from '../components/Hero.astro';
   <section class="py-20 px-4 bg-gray-900/50 border-y border-gray-800">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-        The Problem With DevTools
+        Why Browser Logger, Not browser-tools MCP?
       </h2>
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <!-- Problem side -->
         <div class="space-y-6">
-          <h3 class="text-2xl font-bold text-red-400">❌ Traditional Approach</h3>
+          <h3 class="text-2xl font-bold text-red-400">❌ Without Browser Logger</h3>
           <ul class="space-y-4 text-gray-300">
             <li class="flex gap-3">
               <span class="text-red-400 flex-shrink-0">→</span>
-              <span>Logs disappear on page reload</span>
+              <span>browser-tools MCP is slow & steals context tokens</span>
             </li>
             <li class="flex gap-3">
               <span class="text-red-400 flex-shrink-0">→</span>
-              <span>Can't correlate console errors with network failures</span>
+              <span>Debugging breaks your AI-assisted workflow</span>
             </li>
             <li class="flex gap-3">
               <span class="text-red-400 flex-shrink-0">→</span>
-              <span>Debugging across multiple tabs is a nightmare</span>
+              <span>DevTools and Claude Code work in isolation</span>
             </li>
             <li class="flex gap-3">
               <span class="text-red-400 flex-shrink-0">→</span>
-              <span>No way to query historical logs</span>
+              <span>Generic tools don't fit your needs</span>
             </li>
             <li class="flex gap-3">
               <span class="text-red-400 flex-shrink-0">→</span>
-              <span>DevTools sends data to cloud services (Sentry, etc)</span>
+              <span>Logs disappear on reload (no persistence)</span>
             </li>
           </ul>
         </div>
@@ -51,23 +51,23 @@ import Hero from '../components/Hero.astro';
           <ul class="space-y-4 text-gray-300">
             <li class="flex gap-3">
               <span class="text-emerald-400 flex-shrink-0">→</span>
-              <span>Logs persist for 5 minutes (configurable)</span>
+              <span>Built-in Claude Code skill for instant diagnostics</span>
             </li>
             <li class="flex gap-3">
               <span class="text-emerald-400 flex-shrink-0">→</span>
-              <span>Query console & network data with SQL</span>
+              <span>CLI tools: <code class="bg-emerald-900/30 px-1 rounded text-xs">bun run check errors</code></span>
             </li>
             <li class="flex gap-3">
               <span class="text-emerald-400 flex-shrink-0">→</span>
-              <span>Unified SQLite database for all logging</span>
+              <span>Query logs with SQL (no context overhead)</span>
             </li>
             <li class="flex gap-3">
               <span class="text-emerald-400 flex-shrink-0">→</span>
-              <span>Powerful REST API for custom queries</span>
+              <span>Logs persist for 5 minutes (locally, 100% private)</span>
             </li>
             <li class="flex gap-3">
               <span class="text-emerald-400 flex-shrink-0">→</span>
-              <span>Zero cloud. Data stays on your machine.</span>
+              <span>Zero cloud. Bespoke tool. Built for you.</span>
             </li>
           </ul>
         </div>
@@ -87,45 +87,45 @@ import Hero from '../components/Hero.astro';
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Feature 1 -->
-        <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <div class="text-3xl mb-4">📊</div>
-          <h3 class="text-xl font-bold mb-3">Console Logging</h3>
-          <p class="text-gray-400">Captures console.log, console.error, console.warn, console.info, console.debug plus uncaught errors and unhandled promise rejections.</p>
+        <div class="p-6 border border-emerald-500/50 rounded-lg hover:border-emerald-500 transition-smooth glow-box bg-emerald-500/5">
+          <div class="text-3xl mb-4">🤖</div>
+          <h3 class="text-xl font-bold mb-3 text-emerald-400">Claude Code Skill</h3>
+          <p class="text-gray-400">Built-in Claude Code skill for instant log diagnostics. Ask Claude to analyze errors—no context overhead, instant results.</p>
         </div>
 
         <!-- Feature 2 -->
         <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <div class="text-3xl mb-4">🌐</div>
-          <h3 class="text-xl font-bold mb-3">Network Monitoring</h3>
-          <p class="text-gray-400">Full request/response breakdown including DNS, connect, SSL, send, wait, and receive timing. Identify slow endpoints instantly.</p>
+          <div class="text-3xl mb-4">⌨️</div>
+          <h3 class="text-xl font-bold mb-3">CLI Tools</h3>
+          <p class="text-gray-400"><code class="bg-gray-700 px-2 py-1 rounded text-xs">bun run check errors</code> - Quick commands for common queries. No context switching, instant results.</p>
         </div>
 
         <!-- Feature 3 -->
         <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <div class="text-3xl mb-4">💾</div>
-          <h3 class="text-xl font-bold mb-3">SQLite Storage</h3>
-          <p class="text-gray-400">All logs in a queryable database. Use powerful SQL to find exactly what you're looking for. No cloud required.</p>
+          <div class="text-3xl mb-4">📊</div>
+          <h3 class="text-xl font-bold mb-3">Console & Network</h3>
+          <p class="text-gray-400">Unified logging for console messages, errors, rejections, and network requests. One place for everything.</p>
         </div>
 
         <!-- Feature 4 -->
         <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <div class="text-3xl mb-4">🎯</div>
-          <h3 class="text-xl font-bold mb-3">App Detection</h3>
-          <p class="text-gray-400">Automatically tags logs with app name by port, meta tag, or global variable. Debug multiple apps simultaneously.</p>
+          <div class="text-3xl mb-4">💾</div>
+          <h3 class="text-xl font-bold mb-3">SQL Queries</h3>
+          <p class="text-gray-400">Query logs with SQL. Find exactly what you need in milliseconds. REST API for integration with other tools.</p>
         </div>
 
         <!-- Feature 5 -->
         <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
           <div class="text-3xl mb-4">⚡</div>
-          <h3 class="text-xl font-bold mb-3">Performance</h3>
-          <p class="text-gray-400">Less than 1ms overhead per console call. Batched transmission. Auto-cleanup prevents unbounded growth.</p>
+          <h3 class="text-xl font-bold mb-3">Lightweight</h3>
+          <p class="text-gray-400">Less than 1ms overhead. 100x faster than browser-tools MCP. No context bloat. Bespoke, not generic.</p>
         </div>
 
         <!-- Feature 6 -->
         <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
           <div class="text-3xl mb-4">🔒</div>
-          <h3 class="text-xl font-bold mb-3">Privacy First</h3>
-          <p class="text-gray-400">100% local-first. Zero cloud. Zero telemetry. No external API calls except localhost. Your data, your machine.</p>
+          <h3 class="text-xl font-bold mb-3">100% Local</h3>
+          <p class="text-gray-400">Zero cloud. Zero telemetry. All data stays on your machine. Built for privacy and security.</p>
         </div>
       </div>
     </div>
@@ -148,9 +148,10 @@ import Hero from '../components/Hero.astro';
             <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-600 text-white font-bold">1</div>
           </div>
           <div>
-            <h3 class="text-lg font-bold mb-2">Install Dependencies</h3>
-            <pre><code class="text-sm">bun install
-# or: npm install</code></pre>
+            <h3 class="text-lg font-bold mb-2">Use Claude Code Skill</h3>
+            <pre><code class="text-sm"># Ask Claude Code in your project:
+"check browser logs for recent errors"
+# Claude runs the built-in skill automatically</code></pre>
           </div>
         </div>
 
@@ -160,9 +161,10 @@ import Hero from '../components/Hero.astro';
             <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-600 text-white font-bold">2</div>
           </div>
           <div>
-            <h3 class="text-lg font-bold mb-2">Start Backend Server</h3>
-            <pre><code class="text-sm">bun run logger start
-# Server listens on http://localhost:3001</code></pre>
+            <h3 class="text-lg font-bold mb-2">Or Use CLI Tools</h3>
+            <pre><code class="text-sm">bun run check errors           # See recent errors
+bun run check search "timeout" # Search logs
+bun run query -- "SELECT * FROM console_logs"</code></pre>
           </div>
         </div>
 
@@ -172,8 +174,9 @@ import Hero from '../components/Hero.astro';
             <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-600 text-white font-bold">3</div>
           </div>
           <div>
-            <h3 class="text-lg font-bold mb-2">Load Extension</h3>
-            <pre><code class="text-sm">chrome://extensions → Load unpacked → Select extension/ folder</code></pre>
+            <h3 class="text-lg font-bold mb-2">Start Backend Server</h3>
+            <pre><code class="text-sm">bun run logger start
+# Server listens on http://localhost:3001</code></pre>
           </div>
         </div>
 
@@ -183,10 +186,9 @@ import Hero from '../components/Hero.astro';
             <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-600 text-white font-bold">4</div>
           </div>
           <div>
-            <h3 class="text-lg font-bold mb-2">Start Debugging</h3>
-            <pre><code class="text-sm">bun run check errors           # See recent errors
-bun run check search "timeout" # Search logs
-curl http://localhost:3001/api/logs?level=error # Query via API</code></pre>
+            <h3 class="text-lg font-bold mb-2">Load Extension</h3>
+            <pre><code class="text-sm">chrome://extensions → Load unpacked → Select extension/ folder
+# Now all logs are captured to SQLite</code></pre>
           </div>
         </div>
       </div>
