@@ -1,0 +1,88 @@
+---
+import '../styles/globals.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Browser Logger', description = 'Real-time browser logging to SQLite. Privacy-first debugging.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <title>{title}</title>
+
+    <!-- Preload fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- View Transitions API -->
+    <meta name="astro-view-transitions-enabled" content="true" />
+  </head>
+  <body class="bg-gray-950 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-950/80 backdrop-blur border-b border-gray-800 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold glow">💾 Browser Logger</div>
+        <a href="https://github.com/cfeign/browser-logger" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-smooth">
+          ⭐ GitHub
+        </a>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="pt-16">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-gray-950 py-12 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 class="font-bold text-lg mb-4">Browser Logger</h3>
+            <p class="text-gray-400">Real-time console & network logging to SQLite. Zero cloud. 100% yours.</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="https://github.com/cfeign/browser-logger" class="hover:text-emerald-400 transition-smooth">GitHub</a></li>
+              <li><a href="https://github.com/cfeign/browser-logger#readme" class="hover:text-emerald-400 transition-smooth">Documentation</a></li>
+              <li><a href="https://github.com/cfeign/browser-logger/issues" class="hover:text-emerald-400 transition-smooth">Report Issue</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-4">Made By</h3>
+            <a href="https://coryfeign.com" class="text-emerald-400 hover:text-emerald-300 transition-smooth font-semibold">
+              Cory Feign →
+            </a>
+            <p class="text-sm text-gray-400 mt-2">Multidisciplinary badass. Workflow optimizer. Open source builder.</p>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
+          <p>&copy; 2024 Browser Logger. MIT Licensed. <span class="text-emerald-400">Privacy-first. Local-first. Built for developers.</span></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- GSAP and animations -->
+    <script>
+      // View Transitions API for smooth page transitions
+      document.addEventListener('astro:page-load', () => {
+        console.log('Page loaded');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,323 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<Layout
+  title="Browser Logger - Real-time Debugging for Modern Web Apps"
+  description="Console & network logging to SQLite. Zero cloud. Zero tracking. 100% privacy-first debugging."
+>
+  <!-- Hero Section -->
+  <Hero />
+
+  <!-- Problem & Solution Section -->
+  <section class="py-20 px-4 bg-gray-900/50 border-y border-gray-800">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
+        The Problem With DevTools
+      </h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Problem side -->
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold text-red-400">❌ Traditional Approach</h3>
+          <ul class="space-y-4 text-gray-300">
+            <li class="flex gap-3">
+              <span class="text-red-400 flex-shrink-0">→</span>
+              <span>Logs disappear on page reload</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-red-400 flex-shrink-0">→</span>
+              <span>Can't correlate console errors with network failures</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-red-400 flex-shrink-0">→</span>
+              <span>Debugging across multiple tabs is a nightmare</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-red-400 flex-shrink-0">→</span>
+              <span>No way to query historical logs</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-red-400 flex-shrink-0">→</span>
+              <span>DevTools sends data to cloud services (Sentry, etc)</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Solution side -->
+        <div class="space-y-6">
+          <h3 class="text-2xl font-bold text-emerald-400">✅ Browser Logger</h3>
+          <ul class="space-y-4 text-gray-300">
+            <li class="flex gap-3">
+              <span class="text-emerald-400 flex-shrink-0">→</span>
+              <span>Logs persist for 5 minutes (configurable)</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-emerald-400 flex-shrink-0">→</span>
+              <span>Query console & network data with SQL</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-emerald-400 flex-shrink-0">→</span>
+              <span>Unified SQLite database for all logging</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-emerald-400 flex-shrink-0">→</span>
+              <span>Powerful REST API for custom queries</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-emerald-400 flex-shrink-0">→</span>
+              <span>Zero cloud. Data stays on your machine.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">
+        Powerful Features
+      </h2>
+      <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
+        Everything you need to debug modern web applications effectively
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
+          <div class="text-3xl mb-4">📊</div>
+          <h3 class="text-xl font-bold mb-3">Console Logging</h3>
+          <p class="text-gray-400">Captures console.log, console.error, console.warn, console.info, console.debug plus uncaught errors and unhandled promise rejections.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
+          <div class="text-3xl mb-4">🌐</div>
+          <h3 class="text-xl font-bold mb-3">Network Monitoring</h3>
+          <p class="text-gray-400">Full request/response breakdown including DNS, connect, SSL, send, wait, and receive timing. Identify slow endpoints instantly.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
+          <div class="text-3xl mb-4">💾</div>
+          <h3 class="text-xl font-bold mb-3">SQLite Storage</h3>
+          <p class="text-gray-400">All logs in a queryable database. Use powerful SQL to find exactly what you're looking for. No cloud required.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
+          <div class="text-3xl mb-4">🎯</div>
+          <h3 class="text-xl font-bold mb-3">App Detection</h3>
+          <p class="text-gray-400">Automatically tags logs with app name by port, meta tag, or global variable. Debug multiple apps simultaneously.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
+          <div class="text-3xl mb-4">⚡</div>
+          <h3 class="text-xl font-bold mb-3">Performance</h3>
+          <p class="text-gray-400">Less than 1ms overhead per console call. Batched transmission. Auto-cleanup prevents unbounded growth.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
+          <div class="text-3xl mb-4">🔒</div>
+          <h3 class="text-xl font-bold mb-3">Privacy First</h3>
+          <p class="text-gray-400">100% local-first. Zero cloud. Zero telemetry. No external API calls except localhost. Your data, your machine.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start Section -->
+  <section class="py-20 px-4 bg-gray-900/50 border-y border-gray-800">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">
+        Get Started in 5 Minutes
+      </h2>
+      <p class="text-center text-gray-400 mb-12">
+        Zero configuration. Just install, load, and start debugging.
+      </p>
+
+      <div class="space-y-6">
+        <!-- Step 1 -->
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-600 text-white font-bold">1</div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-2">Install Dependencies</h3>
+            <pre><code class="text-sm">bun install
+# or: npm install</code></pre>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-600 text-white font-bold">2</div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-2">Start Backend Server</h3>
+            <pre><code class="text-sm">bun run logger start
+# Server listens on http://localhost:3001</code></pre>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-600 text-white font-bold">3</div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-2">Load Extension</h3>
+            <pre><code class="text-sm">chrome://extensions → Load unpacked → Select extension/ folder</code></pre>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flex gap-6">
+          <div class="flex-shrink-0">
+            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-600 text-white font-bold">4</div>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold mb-2">Start Debugging</h3>
+            <pre><code class="text-sm">bun run check errors           # See recent errors
+bun run check search "timeout" # Search logs
+curl http://localhost:3001/api/logs?level=error # Query via API</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="https://github.com/cfeign/browser-logger#readme" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-semibold transition-smooth">
+          📖 Read Full Documentation
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy & Security Section -->
+  <section class="py-20 px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">
+        Privacy-First Design
+      </h2>
+      <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+        Your debugging data stays on your machine. Always.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="p-6 border border-emerald-500/30 rounded-lg bg-emerald-500/5">
+          <h3 class="text-xl font-bold text-emerald-400 mb-4">✅ What We Do</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>✓ Store logs in local SQLite database</li>
+            <li>✓ Run API on localhost only</li>
+            <li>✓ Auto-cleanup after 5 minutes</li>
+            <li>✓ Never touch external services</li>
+            <li>✓ Open source & auditable</li>
+          </ul>
+        </div>
+
+        <div class="p-6 border border-red-500/30 rounded-lg bg-red-500/5">
+          <h3 class="text-xl font-bold text-red-400 mb-4">❌ What We Don't Do</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>✗ Send data to cloud services</li>
+            <li>✗ Track usage or analytics</li>
+            <li>✗ Require authentication</li>
+            <li>✗ Share data with third parties</li>
+            <li>✗ Sell or monetize your data</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Trust badges -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div>
+          <div class="text-2xl mb-2">🏠</div>
+          <p class="text-sm text-gray-400">100% Local</p>
+        </div>
+        <div>
+          <div class="text-2xl mb-2">🔓</div>
+          <p class="text-sm text-gray-400">Open Source</p>
+        </div>
+        <div>
+          <div class="text-2xl mb-2">🛡️</div>
+          <p class="text-sm text-gray-400">MIT Licensed</p>
+        </div>
+        <div>
+          <div class="text-2xl mb-2">⚡</div>
+          <p class="text-sm text-gray-400">Zero Telemetry</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-4 bg-gradient-to-r from-emerald-900/20 via-blue-900/20 to-purple-900/20">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-5xl font-bold mb-6">
+        Ready to Debug Better?
+      </h2>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Browser Logger is free, open source, and ready to use. No sign-up required.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+        <a href="https://github.com/cfeign/browser-logger" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-bold transition-smooth">
+          ⭐ Star on GitHub
+        </a>
+        <a href="https://github.com/cfeign/browser-logger/issues" target="_blank" rel="noopener noreferrer" class="px-8 py-4 border border-gray-600 hover:border-emerald-500 rounded-lg font-bold transition-smooth">
+          💬 Report Issues
+        </a>
+      </div>
+
+      <p class="text-gray-400 mb-8">
+        Made with ❤️ by <a href="https://coryfeign.com" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-semibold">Cory Feign</a>
+      </p>
+
+      <div class="text-sm text-gray-500">
+        <p>Part of a suite of developer tools for modern web debugging</p>
+        <p class="mt-2">
+          <a href="https://coryfeign.com/projects" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300">
+            Explore more projects →
+          </a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+          });
+        }
+      });
+    });
+
+    // Add animation on scroll for feature cards
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    });
+
+    document.querySelectorAll('[class*="glow-box"]').forEach((el) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'all 0.6s ease-out';
+      observer.observe(el);
+    });
+  </script>
+</Layout>

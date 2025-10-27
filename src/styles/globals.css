@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-950 text-gray-100 font-sans;
+  }
+}
+
+/* Animated gradient background */
+.gradient-animated {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Typing animation */
+.typing {
+  overflow: hidden;
+  border-right: 3px solid #23d5ab;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #23d5ab;
+  }
+}
+
+/* Glow effect */
+.glow {
+  text-shadow: 0 0 20px rgba(35, 213, 171, 0.5);
+}
+
+.glow-box {
+  box-shadow: 0 0 30px rgba(35, 213, 171, 0.2), 0 0 60px rgba(35, 213, 171, 0.1);
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Code block styling */
+code {
+  @apply bg-gray-900 px-2 py-1 rounded text-sm font-mono text-emerald-300;
+}
+
+pre {
+  @apply bg-gray-900 p-4 rounded-lg overflow-x-auto;
+}
+
+pre code {
+  @apply bg-transparent px-0 py-0;
+}

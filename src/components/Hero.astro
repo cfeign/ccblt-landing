@@ -1,0 +1,106 @@
+---
+// Hero section with animated terminal
+---
+
+<section class="min-h-screen flex items-center justify-center px-4 py-20 relative overflow-hidden">
+  <!-- Animated gradient background -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-500 blur-3xl animate-pulse-slow"></div>
+  </div>
+
+  <div class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <!-- Left: Text content -->
+    <div class="space-y-6">
+      <div class="space-y-4">
+        <h1 class="text-5xl md:text-6xl font-bold leading-tight">
+          DevTools loses your logs.
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-500">We don't.</span>
+        </h1>
+        <p class="text-xl text-gray-300">
+          Real-time browser console & network logging to SQLite. Zero cloud. Zero tracking. 100% yours.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <a href="https://github.com/cfeign/browser-logger" target="_blank" rel="noopener noreferrer" class="px-8 py-3 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-semibold transition-smooth text-center">
+          📦 Get Started on GitHub
+        </a>
+        <a href="https://coryfeign.com" target="_blank" rel="noopener noreferrer" class="px-8 py-3 border border-gray-600 hover:border-emerald-500 rounded-lg font-semibold transition-smooth text-center">
+          Made by Cory Feign →
+        </a>
+      </div>
+
+      <!-- Feature badges -->
+      <div class="pt-8 space-y-3">
+        <div class="flex items-center gap-3 text-sm">
+          <span class="text-emerald-400 font-bold">✓</span>
+          <span>Unifies console logs & network requests</span>
+        </div>
+        <div class="flex items-center gap-3 text-sm">
+          <span class="text-emerald-400 font-bold">✓</span>
+          <span>Query via SQL or REST API</span>
+        </div>
+        <div class="flex items-center gap-3 text-sm">
+          <span class="text-emerald-400 font-bold">✓</span>
+          <span>100% local. Zero cloud. Zero tracking.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Animated terminal -->
+    <div class="relative">
+      <!-- Glow effect -->
+      <div class="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 rounded-2xl blur-2xl"></div>
+
+      <!-- Terminal window -->
+      <div class="relative bg-gray-900 border border-gray-700 rounded-xl overflow-hidden glow-box">
+        <!-- Terminal header -->
+        <div class="bg-gray-800 px-4 py-3 flex items-center gap-2 border-b border-gray-700">
+          <div class="flex gap-2">
+            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+          <span class="text-sm text-gray-400 ml-4">~/browser-logger</span>
+        </div>
+
+        <!-- Terminal content -->
+        <div class="p-6 font-mono text-sm space-y-2 h-80 overflow-hidden">
+          <div class="text-gray-500">$ bun run check errors</div>
+          <div class="text-emerald-400">✓ Recent Errors (last 5 minutes)</div>
+          <div class="text-gray-400 mt-3">
+            <div class="text-red-400">❌ [error] Failed to fetch user data</div>
+            <div class="ml-4 text-gray-500">  at /dashboard.js:45</div>
+            <div class="ml-4 text-gray-500">  timestamp: 2024-10-27T07:30:15.234Z</div>
+          </div>
+          <div class="text-gray-400 mt-2">
+            <div class="text-yellow-400">⚠️  [warn] Slow network request</div>
+            <div class="ml-4 text-gray-500">  GET /api/data → 2340ms</div>
+            <div class="ml-4 text-gray-500">  timestamp: 2024-10-27T07:30:12.120Z</div>
+          </div>
+          <div class="text-gray-400 mt-2">
+            <div class="text-blue-400">ℹ️  [info] Database synced</div>
+            <div class="ml-4 text-gray-500">  timestamp: 2024-10-27T07:30:08.567Z</div>
+          </div>
+          <div class="text-gray-500 mt-4">$ bun run query -- "SELECT * FROM network_logs WHERE total_time > 1000"</div>
+          <div class="text-emerald-400 text-xs mt-2 animate-pulse">▌</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+</style>

@@ -1,0 +1,24 @@
+{
+  "name": "ccblt-landing",
+  "version": "1.0.0",
+  "description": "Flashy landing page for Browser Logger",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "wrangler pages deploy dist"
+  },
+  "dependencies": {
+    "astro": "^5.0.0",
+    "gsap": "^3.12.4"
+  },
+  "devDependencies": {
+    "@astrojs/tailwind": "^5.0.0",
+    "@types/bun": "latest",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "wrangler": "^3.76.0"
+  }
+}

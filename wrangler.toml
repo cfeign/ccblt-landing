@@ -1,0 +1,9 @@
+name = "ccblt-landing"
+main = "src/index.js"
+compatibility_date = "2024-11-01"
+
+[env.production]
+route = "ccblt.coryfeign.com/*"
+
+# Cloudflare Pages configuration
+pages_build_caching = true
