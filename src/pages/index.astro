@@ -11,315 +11,266 @@ import Hero from '../components/Hero.astro';
   <Hero />
 
   <!-- Problem & Solution Section -->
-  <section class="py-20 px-4 bg-gray-900/50 border-y border-gray-800">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">
-        Why Browser Logger, Not browser-tools MCP?
-      </h2>
+  <section class="py-32 px-4 relative overflow-hidden">
+    <!-- Background elements -->
+    <div class="absolute inset-0 gradient-bg opacity-20"></div>
+    <div class="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-red-400/10 to-orange-500/10 blur-3xl blob floating"></div>
+    
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-20 scroll-reveal">
+        <h2 class="text-6xl md:text-7xl lg:text-8xl font-display font-black mb-8">
+          <span class="text-red-500">MCP SERVERS</span><br/>
+          <span class="text-red-400">ARE RANDOM GARBAGE</span>
+        </h2>
+        <p class="text-2xl text-gray-300 font-bold max-w-2xl mx-auto">
+          NON-DETERMINISTIC. UNRELIABLE. WASTES YOUR TIME.
+        </p>
+      </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
         <!-- Problem side -->
-        <div class="space-y-6">
-          <h3 class="text-2xl font-bold text-red-400">❌ Without Browser Logger</h3>
-          <ul class="space-y-4 text-gray-300">
-            <li class="flex gap-3">
-              <span class="text-red-400 flex-shrink-0">→</span>
-              <span>browser-tools MCP is slow & steals context tokens</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-red-400 flex-shrink-0">→</span>
-              <span>Debugging breaks your AI-assisted workflow</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-red-400 flex-shrink-0">→</span>
-              <span>DevTools and Claude Code work in isolation</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-red-400 flex-shrink-0">→</span>
-              <span>Generic tools don't fit your needs</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-red-400 flex-shrink-0">→</span>
-              <span>Logs disappear on reload (no persistence)</span>
-            </li>
-          </ul>
+        <div class="scroll-reveal">
+          <div class="bg-black border-4 border-red-500 p-8">
+            <h3 class="text-4xl font-black text-red-500 mb-6">MCP SERVERS</h3>
+            <div class="space-y-3 text-xl font-bold text-gray-300">
+              <div>❌ NON-DETERMINISTIC</div>
+              <div>❌ RANDOM RESULTS</div>
+              <div>❌ WASTES CONTEXT TOKENS</div>
+              <div>❌ WORKS ON SOME PROJECTS</div>
+              <div>❌ UNRELIABLE GARBAGE</div>
+            </div>
+          </div>
         </div>
 
         <!-- Solution side -->
-        <div class="space-y-6">
-          <h3 class="text-2xl font-bold text-emerald-400">✅ Browser Logger</h3>
-          <ul class="space-y-4 text-gray-300">
-            <li class="flex gap-3">
-              <span class="text-emerald-400 flex-shrink-0">→</span>
-              <span>Built-in Claude Code skill for instant diagnostics</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-emerald-400 flex-shrink-0">→</span>
-              <span>CLI tools: <code class="bg-emerald-900/30 px-1 rounded text-xs">bun run check errors</code></span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-emerald-400 flex-shrink-0">→</span>
-              <span>Query logs with SQL (no context overhead)</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-emerald-400 flex-shrink-0">→</span>
-              <span>Logs persist for 5 minutes (locally, 100% private)</span>
-            </li>
-            <li class="flex gap-3">
-              <span class="text-emerald-400 flex-shrink-0">→</span>
-              <span>Zero cloud. Bespoke tool. Built for you.</span>
-            </li>
-          </ul>
+        <div class="scroll-reveal" style="animation-delay: 0.2s">
+          <div class="bg-black border-4 border-emerald-500 p-8">
+            <h3 class="text-4xl font-black text-emerald-400 mb-6">BROWSER LOGGER</h3>
+            <div class="space-y-3 text-xl font-bold text-gray-300">
+              <div>✅ 100% DETERMINISTIC</div>
+              <div>✅ MINIMIZES CONTEXT USAGE</div>
+              <div>✅ EXTRACTS IMPORTANT DETAILS</div>
+              <div>✅ WORKS ON ANY PROJECT</div>
+              <div>✅ CLONE. RUN. DEBUG.</div>
+            </div>
+            <code class="block mt-6 bg-gray-900 p-3 text-emerald-300 font-mono">git clone && bun run logger start</code>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Features Section -->
-  <section class="py-20 px-4">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">
-        Powerful Features
-      </h2>
-      <p class="text-center text-gray-400 mb-16 max-w-2xl mx-auto">
-        Everything you need to debug modern web applications effectively
-      </p>
+  <section class="py-32 px-4 relative">
+    <!-- Background decoration -->
+    <div class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-blue-400/10 to-purple-500/10 blur-3xl blob floating-delayed"></div>
+    
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-20 scroll-reveal">
+        <h2 class="text-6xl md:text-7xl font-display font-black mb-6">
+          WHAT IT<br/>
+          <span class="text-blue-400">ACTUALLY DOES</span>
+        </h2>
+        <p class="text-2xl text-gray-300 font-bold max-w-2xl mx-auto">
+          NO BULLSHIT. JUST THE IMPORTANT DETAILS.
+        </p>
+      </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Feature 1 -->
-        <div class="p-6 border border-emerald-500/50 rounded-lg hover:border-emerald-500 transition-smooth glow-box bg-emerald-500/5">
-          <img src="https://img.icons8.com/color/96/artificial-intelligence.png" alt="Claude Code Skill" class="mb-4 h-12 w-12" loading="lazy" />
-          <h3 class="text-xl font-bold mb-3 text-emerald-400">Claude Code Skill</h3>
-          <p class="text-gray-400">Built-in Claude Code skill for instant log diagnostics. Ask Claude to analyze errors—no context overhead, instant results.</p>
+        <div class="bg-black border-4 border-emerald-500 p-6 scroll-reveal">
+          <h3 class="text-2xl font-black text-emerald-400 mb-3">DETERMINISTIC</h3>
+          <p class="text-lg font-bold text-gray-300">SAME INPUT = SAME OUTPUT</p>
         </div>
 
-        <!-- Feature 2 -->
-        <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <img src="https://img.icons8.com/color/96/console.png" alt="CLI Tools" class="mb-4 h-12 w-12" loading="lazy" />
-          <h3 class="text-xl font-bold mb-3">CLI Tools</h3>
-          <p class="text-gray-400"><code class="bg-gray-700 px-2 py-1 rounded text-xs">bun run check errors</code> - Quick commands for common queries. No context switching, instant results.</p>
+        <div class="bg-black border-4 border-blue-500 p-6 scroll-reveal" style="animation-delay: 0.1s">
+          <h3 class="text-2xl font-black text-blue-400 mb-3">EXTRACTS DETAILS</h3>
+          <p class="text-lg font-bold text-gray-300 mb-3">NO 500-LINE COPY-PASTE</p>
+          <code class="block bg-gray-900 p-2 text-blue-300 font-mono text-sm">DevTools: 500 lines → Logger: 1 line</code>
         </div>
 
-        <!-- Feature 3 -->
-        <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <img src="https://img.icons8.com/color/96/combo-chart.png" alt="Console & Network" class="mb-4 h-12 w-12" loading="lazy" />
-          <h3 class="text-xl font-bold mb-3">Console & Network</h3>
-          <p class="text-gray-400">Unified logging for console messages, errors, rejections, and network requests. One place for everything.</p>
+        <div class="bg-black border-4 border-purple-500 p-6 scroll-reveal" style="animation-delay: 0.2s">
+          <h3 class="text-2xl font-black text-purple-400 mb-3">ANY PROJECT</h3>
+          <p class="text-lg font-bold text-gray-300">WORKS EVERYWHERE. NO CONFIG.</p>
         </div>
 
-        <!-- Feature 4 -->
-        <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <img src="https://img.icons8.com/color/96/database-restore.png" alt="SQL Queries" class="mb-4 h-12 w-12" loading="lazy" />
-          <h3 class="text-xl font-bold mb-3">SQL Queries</h3>
-          <p class="text-gray-400">Query logs with SQL. Find exactly what you need in milliseconds. REST API for integration with other tools.</p>
+        <div class="bg-black border-4 border-cyan-500 p-6 scroll-reveal" style="animation-delay: 0.3s">
+          <h3 class="text-2xl font-black text-cyan-400 mb-3">SQL QUERIES</h3>
+          <p class="text-lg font-bold text-gray-300">FIND ANYTHING. INSTANTLY.</p>
         </div>
 
-        <!-- Feature 5 -->
-        <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <img src="https://img.icons8.com/color/96/rocket.png" alt="Lightweight" class="mb-4 h-12 w-12" loading="lazy" />
-          <h3 class="text-xl font-bold mb-3">Lightweight</h3>
-          <p class="text-gray-400">Less than 1ms overhead. 100x faster than browser-tools MCP. No context bloat. Bespoke, not generic.</p>
+        <div class="bg-black border-4 border-yellow-500 p-6 scroll-reveal" style="animation-delay: 0.4s">
+          <h3 class="text-2xl font-black text-yellow-400 mb-3">MINIMAL CONTEXT</h3>
+          <p class="text-lg font-bold text-gray-300">SAVES TOKENS. FAST RESPONSES.</p>
         </div>
 
-        <!-- Feature 6 -->
-        <div class="p-6 border border-gray-800 rounded-lg hover:border-emerald-500/50 transition-smooth glow-box">
-          <img src="https://img.icons8.com/color/96/private.png" alt="100% Local" class="mb-4 h-12 w-12" loading="lazy" />
-          <h3 class="text-xl font-bold mb-3">100% Local</h3>
-          <p class="text-gray-400">Zero cloud. Zero telemetry. All data stays on your machine. Built for privacy and security.</p>
+        <div class="bg-black border-4 border-pink-500 p-6 scroll-reveal" style="animation-delay: 0.5s">
+          <h3 class="text-2xl font-black text-pink-400 mb-3">MINIMAL CONTEXT</h3>
+          <p class="text-lg font-bold text-gray-300">SAVES TOKENS. FAST RESPONSES.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Quick Start Section -->
-  <section class="py-20 px-4 bg-gray-900/50 border-y border-gray-800">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">
-        Get Started in 5 Minutes
-      </h2>
-      <p class="text-center text-gray-400 mb-12">
-        Zero configuration. Just install, load, and start debugging.
-      </p>
+  <section class="py-32 px-4 relative overflow-hidden">
+    <!-- Background elements -->
+    <div class="absolute inset-0 gradient-bg opacity-20"></div>
+    
+    <div class="max-w-5xl mx-auto relative z-10">
+      <div class="text-center mb-20 scroll-reveal">
+        <h2 class="text-6xl md:text-7xl font-display font-black mb-6">
+          MINIMAL<br/>
+          <span class="text-emerald-400">CONTEXT USAGE</span>
+        </h2>
+        <p class="text-2xl text-gray-300 font-bold max-w-2xl mx-auto">
+          SAVES TOKENS. FAST RESPONSES. DETERMINISTIC.
+        </p>
+      </div>
 
       <div class="space-y-6">
         <!-- Step 1 -->
-        <div class="flex gap-6">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-600 text-white font-bold">1</div>
+        <div class="bg-black border-4 border-emerald-500 p-6 scroll-reveal">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="text-4xl font-black text-emerald-400">1</div>
+            <h3 class="text-2xl font-black text-emerald-400">CLONE REPO</h3>
           </div>
-          <div>
-            <h3 class="text-lg font-bold mb-2">Use Claude Code Skill</h3>
-            <pre><code class="text-sm"># Ask Claude Code in your project:
-"check browser logs for recent errors"
-# Claude runs the built-in skill automatically</code></pre>
-          </div>
+          <code class="block bg-gray-900 p-3 text-emerald-300 font-mono">git clone https://github.com/cfeign/browser-logger</code>
         </div>
 
         <!-- Step 2 -->
-        <div class="flex gap-6">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-600 text-white font-bold">2</div>
+        <div class="bg-black border-4 border-blue-500 p-6 scroll-reveal" style="animation-delay: 0.1s">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="text-4xl font-black text-blue-400">2</div>
+            <h3 class="text-2xl font-black text-blue-400">RUN SERVER</h3>
           </div>
-          <div>
-            <h3 class="text-lg font-bold mb-2">Or Use CLI Tools</h3>
-            <pre><code class="text-sm">bun run check errors           # See recent errors
-bun run check search "timeout" # Search logs
-bun run query -- "SELECT * FROM console_logs"</code></pre>
-          </div>
+          <code class="block bg-gray-900 p-3 text-blue-300 font-mono">cd browser-logger && bun run logger start</code>
         </div>
 
         <!-- Step 3 -->
-        <div class="flex gap-6">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-600 text-white font-bold">3</div>
+        <div class="bg-black border-4 border-purple-500 p-6 scroll-reveal" style="animation-delay: 0.2s">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="text-4xl font-black text-purple-400">3</div>
+            <h3 class="text-2xl font-black text-purple-400">LOAD EXTENSION</h3>
           </div>
-          <div>
-            <h3 class="text-lg font-bold mb-2">Start Backend Server</h3>
-            <pre><code class="text-sm">bun run logger start
-# Server listens on http://localhost:3001</code></pre>
-          </div>
-        </div>
-
-        <!-- Step 4 -->
-        <div class="flex gap-6">
-          <div class="flex-shrink-0">
-            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-emerald-600 text-white font-bold">4</div>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold mb-2">Load Extension</h3>
-            <pre><code class="text-sm">chrome://extensions → Load unpacked → Select extension/ folder
-# Now all logs are captured to SQLite</code></pre>
-          </div>
+          <code class="block bg-gray-900 p-3 text-purple-300 font-mono">chrome://extensions → Load unpacked → extension/</code>
         </div>
       </div>
 
-      <div class="text-center mt-12">
-        <a href="https://github.com/cfeign/browser-logger#readme" target="_blank" rel="noopener noreferrer" class="inline-block px-8 py-3 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-semibold transition-smooth">
-          📖 Read Full Documentation
+      <div class="text-center mt-16 scroll-reveal">
+        <a href="https://github.com/cfeign/browser-logger#readme" target="_blank" rel="noopener noreferrer" class="glass-button-primary magnetic text-lg px-8 py-4 inline-flex items-center gap-3">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          Read Full Documentation
         </a>
       </div>
     </div>
   </section>
 
   <!-- Privacy & Security Section -->
-  <section class="py-20 px-4">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">
-        Privacy-First Design
-      </h2>
-      <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-        Your debugging data stays on your machine. Always.
-      </p>
+  <section class="py-32 px-4 relative">
+    <!-- Background decoration -->
+    <div class="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-br from-green-400/10 to-emerald-500/10 blur-3xl blob floating"></div>
+    
+    <div class="max-w-6xl mx-auto relative z-10">
+      <div class="text-center mb-20 scroll-reveal">
+        <h2 class="text-6xl md:text-7xl font-display font-black mb-6">
+          DETERMINISTIC<br/>
+          <span class="text-emerald-400">RELIABLE DEBUGGING</span>
+        </h2>
+        <p class="text-2xl text-gray-300 font-bold max-w-2xl mx-auto">
+          SAME INPUT. SAME OUTPUT. EVERY TIME.
+        </p>
+      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-        <div class="p-6 border border-emerald-500/30 rounded-lg bg-emerald-500/5">
-          <h3 class="text-xl font-bold text-emerald-400 mb-4">✅ What We Do</h3>
-          <ul class="space-y-2 text-gray-300">
-            <li>✓ Store logs in local SQLite database</li>
-            <li>✓ Run API on localhost only</li>
-            <li>✓ Auto-cleanup after 5 minutes</li>
-            <li>✓ Never touch external services</li>
-            <li>✓ Open source & auditable</li>
-          </ul>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+        <div class="bg-black border-4 border-emerald-500 p-8 scroll-reveal">
+          <h3 class="text-3xl font-black text-emerald-400 mb-6">✅ WHAT WE DO</h3>
+          <div class="space-y-2 text-lg font-bold text-gray-300">
+            <div>• MINIMAL CONTEXT USAGE</div>
+            <div>• DETERMINISTIC RESULTS</div>
+            <div>• EXTRACTS IMPORTANT DETAILS</div>
+            <div>• WORKS ON ANY PROJECT</div>
+            <div>• OPEN SOURCE</div>
+          </div>
+        </div>
         </div>
 
-        <div class="p-6 border border-red-500/30 rounded-lg bg-red-500/5">
-          <h3 class="text-xl font-bold text-red-400 mb-4">❌ What We Don't Do</h3>
-          <ul class="space-y-2 text-gray-300">
-            <li>✗ Send data to cloud services</li>
-            <li>✗ Track usage or analytics</li>
-            <li>✗ Require authentication</li>
-            <li>✗ Share data with third parties</li>
-            <li>✗ Sell or monetize your data</li>
-          </ul>
+        <div class="bg-black border-4 border-red-500 p-8 scroll-reveal" style="animation-delay: 0.2s">
+          <h3 class="text-3xl font-black text-red-400 mb-6">❌ MCP SERVERS</h3>
+          <div class="space-y-2 text-lg font-bold text-gray-300">
+            <div>• NON-DETERMINISTIC</div>
+            <div>• WASTES CONTEXT TOKENS</div>
+            <div>• RANDOM RESULTS</div>
+            <div>• WORKS ON SOME PROJECTS</div>
+            <div>• UNRELIABLE GARBAGE</div>
+          </div>
+        </div>
+        </div>
         </div>
       </div>
 
       <!-- Trust badges -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-        <div>
-          <img src="https://img.icons8.com/color/64/home.png" alt="100% Local" class="mb-2 h-8 w-8 mx-auto" loading="lazy" />
-          <p class="text-sm text-gray-400">100% Local</p>
-        </div>
-        <div>
-          <img src="https://img.icons8.com/color/64/github.png" alt="Open Source" class="mb-2 h-8 w-8 mx-auto" loading="lazy" />
-          <p class="text-sm text-gray-400">Open Source</p>
-        </div>
-        <div>
-          <img src="https://img.icons8.com/color/64/shield-plus.png" alt="MIT Licensed" class="mb-2 h-8 w-8 mx-auto" loading="lazy" />
-          <p class="text-sm text-gray-400">MIT Licensed</p>
-        </div>
-        <div>
-          <img src="https://img.icons8.com/color/64/high-priority.png" alt="Zero Telemetry" class="mb-2 h-8 w-8 mx-auto" loading="lazy" />
-          <p class="text-sm text-gray-400">Zero Telemetry</p>
-        </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {[
+          { icon: "🏠", title: "100% Local", color: "emerald" },
+          { icon: "📖", title: "Open Source", color: "blue" },
+          { icon: "🛡️", title: "MIT Licensed", color: "purple" },
+          { icon: "🚫", title: "Zero Telemetry", color: "red" }
+        ].map((badge, index) => (
+          <div key={index} class="glass-card text-center p-6 scroll-reveal" style={`animation-delay: ${index * 0.1}s`}>
+            <div class="text-4xl mb-3">{badge.icon}</div>
+            <p class="text-sm font-semibold text-gray-300">{badge.title}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 px-4 bg-gradient-to-r from-emerald-900/20 via-blue-900/20 to-purple-900/20">
-    <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-5xl font-bold mb-6">
-        Ready to Debug Better?
-      </h2>
-      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-        Browser Logger is free, open source, and ready to use. No sign-up required.
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-        <a href="https://github.com/cfeign/browser-logger" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 rounded-lg font-bold transition-smooth">
-          ⭐ Star on GitHub
-        </a>
-        <a href="https://github.com/cfeign/browser-logger/issues" target="_blank" rel="noopener noreferrer" class="px-8 py-4 border border-gray-600 hover:border-emerald-500 rounded-lg font-bold transition-smooth">
-          💬 Report Issues
-        </a>
-      </div>
-
-      <p class="text-gray-400 mb-8">
-        Made by <a href="https://coryfeign.com" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 font-semibold">Cory Feign</a>
-      </p>
-
-      <div class="text-sm text-gray-500">
-        <p>Part of a suite of developer tools for modern web debugging</p>
-        <p class="mt-2">
-          <a href="https://coryfeign.com/projects" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300">
-            Explore more projects →
-          </a>
+  <section class="py-32 px-4 relative overflow-hidden">
+    <!-- Animated gradient background -->
+    <div class="absolute inset-0 gradient-animated opacity-30"></div>
+    
+    <div class="max-w-5xl mx-auto text-center relative z-10">
+      <div class="glass-card p-16 glow-modern scroll-reveal">
+        <h2 class="text-5xl md:text-6xl font-display font-bold mb-6">
+          Ready to Debug<br/>
+          <span class="gradient-text">Better?</span>
+        </h2>
+        <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto leading-relaxed">
+          Browser Logger is free, open source, and ready to use. No sign-up required.
         </p>
+
+        <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+          <a href="https://github.com/cfeign/browser-logger" target="_blank" rel="noopener noreferrer" class="glass-button-primary magnetic text-lg px-8 py-4 inline-flex items-center gap-3">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            ⭐ Star on GitHub
+          </a>
+          <a href="https://github.com/cfeign/browser-logger/issues" target="_blank" rel="noopener noreferrer" class="glass-button magnetic text-lg px-8 py-4 inline-flex items-center gap-3">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+            </svg>
+            💬 Report Issues
+          </a>
+        </div>
+
+        <div class="space-y-4">
+          <p class="text-gray-300">
+            Made by <a href="https://coryfeign.com" target="_blank" rel="noopener noreferrer" class="gradient-text font-semibold hover:text-emerald-300 transition-colors">Cory Feign</a>
+          </p>
+          <div class="text-sm text-gray-400">
+            <p>Part of a suite of developer tools for modern web debugging</p>
+            <p class="mt-2">
+              <a href="https://coryfeign.com/projects" target="_blank" rel="noopener noreferrer" class="text-emerald-400 hover:text-emerald-300 transition-colors">
+                Explore more projects →
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
-  <script>
-    // Smooth scroll behavior
-    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-          });
-        }
-      });
-    });
-
-    // Add animation on scroll for feature cards
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    });
-
-    document.querySelectorAll('[class*="glow-box"]').forEach((el) => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'all 0.6s ease-out';
-      observer.observe(el);
-    });
-  </script>
 </Layout>
