@@ -1,111 +1,113 @@
----
-description: Use Bun instead of Node.js, npm, pnpm, or vite.
-globs: "*.ts, *.tsx, *.html, *.css, *.js, *.jsx, package.json"
-alwaysApply: false
----
+# CLAUDE.md
 
-Default to using Bun instead of Node.js.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-- Use `bun <file>` instead of `node <file>` or `ts-node <file>`
-- Use `bun test` instead of `jest` or `vitest`
-- Use `bun build <file.html|file.ts|file.css>` instead of `webpack` or `esbuild`
-- Use `bun install` instead of `npm install` or `yarn install` or `pnpm install`
-- Use `bun run <script>` instead of `npm run <script>` or `yarn run <script>` or `pnpm run <script>`
-- Bun automatically loads .env, so don't use dotenv.
+## Project Overview
 
-## APIs
+This is an **Astro 5.x** static site with a "brutalist neon" design aesthetic, serving as a landing page for the Browser Logger Chrome extension. The site is deployed to Cloudflare Pages.
 
-- `Bun.serve()` supports WebSockets, HTTPS, and routes. Don't use `express`.
-- `bun:sqlite` for SQLite. Don't use `better-sqlite3`.
-- `Bun.redis` for Redis. Don't use `ioredis`.
-- `Bun.sql` for Postgres. Don't use `pg` or `postgres.js`.
-- `WebSocket` is built-in. Don't use `ws`.
-- Prefer `Bun.file` over `node:fs`'s readFile/writeFile
-- Bun.$`ls` instead of execa.
+## Development Commands
 
-## Testing
+**Always use Bun instead of Node.js/npm/pnpm:**
+- `bun install` - Install dependencies
+- `bun run dev` - Start Astro dev server (http://localhost:3000)
+- `bun run build` - Build for production (outputs to `dist/`)
+- `bun run preview` - Preview production build locally
+- `bun run deploy` - Deploy to Cloudflare Pages via Wrangler
 
-Use `bun test` to run tests.
+**Testing:**
+- `bun test` - Run all tests (if test files exist)
+- `bun test <filename>` - Run single test file
 
-```ts#index.test.ts
-import { test, expect } from "bun:test";
+## Architecture
 
-test("hello world", () => {
-  expect(1).toBe(1);
-});
+### Technology Stack
+- **Framework**: Astro 5.0 (zero JavaScript by default, static site generation)
+- **Styling**: Tailwind CSS v3 with extensive custom theme
+- **Build Tool**: Bun (package manager and runtime)
+- **Deployment**: Cloudflare Pages via Wrangler
+- **TypeScript**: Strict configuration enabled
+- **Animations**: GSAP (installed but not currently used in components)
+
+### Project Structure
+```
+src/
+├── pages/index.astro          # Main landing page (route: /)
+├── layouts/Layout.astro       # Base layout with meta tags, navigation
+├── components/Hero.astro      # Hero section component
+└── styles/globals.css         # Global styles + Tailwind imports
 ```
 
-## Frontend
+### Key Configuration Files
+- `astro.config.mjs` - Minimal config with Tailwind integration, static output mode
+- `tailwind.config.mjs` - Extensive custom theme with brutalist/neon colors and animations
+- `tsconfig.json` - Extends Astro's strict TypeScript config
+- `wrangler.toml` - Cloudflare Pages deployment configuration
 
-Use HTML imports with `Bun.serve()`. Don't use `vite`. HTML imports fully support React, CSS, Tailwind.
+## Design System
 
-Server:
+The project uses a distinctive "brutalist neon" design system:
 
-```ts#index.ts
-import index from "./index.html"
+### Color Palettes (defined in Tailwind config)
+- `brutalist`: black, charcoal, gray
+- `neon`: pink, purple, blue, cyan, green, yellow, red
+- `rainbow`: full spectrum colors
 
-Bun.serve({
-  routes: {
-    "/": index,
-    "/api/users/:id": {
-      GET: (req) => {
-        return new Response(JSON.stringify({ id: req.params.id }));
-      },
-    },
-  },
-  // optional websocket support
-  websocket: {
-    open: (ws) => {
-      ws.send("Hello, world!");
-    },
-    message: (ws, message) => {
-      ws.send(message);
-    },
-    close: (ws) => {
-      // handle close
-    }
-  },
-  development: {
-    hmr: true,
-    console: true,
-  }
-})
+### Custom Animations
+- `glitch`, `rainbow`, `scanline`, `rgb-split`, `text-flicker`
+- Applied via Tailwind utility classes: `animate-glitch`, `animate-rainbow`, etc.
+
+### Typography
+- **Primary**: Inter (sans-serif)
+- **Retro**: Orbitron (display)
+- **Brutal**: Bebas Neue (display)
+
+## Development Patterns
+
+### Component Architecture
+- Components are `.astro` files with frontmatter TypeScript
+- Use PascalCase for component filenames
+- Import CSS directly in Astro frontmatter: `import '../styles/globals.css'`
+- Follow Astro's zero-JS philosophy: minimal client-side JavaScript
+
+### Styling Conventions
+- Use Tailwind utility classes primarily
+- Custom styles go in `src/styles/globals.css` with `@layer` directives
+- Apply `.brutalist` and `.brutalist-neon` classes for design system consistency
+
+### TypeScript
+- Strict mode enabled
+- Interfaces for component props in frontmatter
+- ESNext target with module preservation
+
+## Deployment
+
+### Cloudflare Pages (Automatic)
+- Push to GitHub triggers automatic builds
+- Build command: `bun run build`
+- Output directory: `dist/`
+- Custom domain: `ccblt.coryfeign.com`
+
+### Manual Deployment
+```bash
+bun run build
+bun run deploy  # Uses wrangler pages deploy dist
 ```
 
-HTML files can import .tsx, .jsx or .js files directly and Bun's bundler will transpile & bundle automatically. `<link>` tags can point to stylesheets and Bun's CSS bundler will bundle.
+## Performance Characteristics
+- LCP: <500ms (target)
+- FCP: <1s (target)
+- TBT: 0ms (no JavaScript by default)
+- Full page size: <50KB
 
-```html#index.html
-<html>
-  <body>
-    <h1>Hello, world!</h1>
-    <script type="module" src="./frontend.tsx"></script>
-  </body>
-</html>
-```
+## Related Documentation
+- `README.md` - Project overview and setup
+- `AGENTS.md` - Specific guidelines for AI agents
+- `DEPLOYMENT.md` - Detailed Cloudflare Pages deployment guide
 
-With the following `frontend.tsx`:
-
-```tsx#frontend.tsx
-import React from "react";
-
-// import .css files directly and it works
-import './index.css';
-
-import { createRoot } from "react-dom/client";
-
-const root = createRoot(document.body);
-
-export default function Frontend() {
-  return <h1>Hello, world!</h1>;
-}
-
-root.render(<Frontend />);
-```
-
-Then, run index.ts
-
-```sh
-bun --hot ./index.ts
-```
-
-For more information, read the Bun API docs in `node_modules/bun-types/docs/**.md`.
+## Notes for AI Assistants
+1. This is a **static site** - no server-side rendering or dynamic routes
+2. **Zero JavaScript by default** - leverage Astro's static generation
+3. **Bun-first approach** - all scripts use Bun, not npm/pnpm
+4. **Design system consistency** - use the custom Tailwind classes and colors
+5. **Cloudflare edge deployment** - optimized for global CDN performance
