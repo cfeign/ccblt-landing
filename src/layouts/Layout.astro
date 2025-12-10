@@ -26,134 +26,62 @@ const { title = 'Browser Logger', description = 'Real-time browser logging to SQ
     <!-- Preload fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <!-- View Transitions API -->
     <meta name="astro-view-transitions-enabled" content="true" />
   </head>
-  <body class="bg-brutalist-black text-white font-display">
-    <!-- Brutalist Navigation -->
-    <nav class="brutalist-neon fixed top-0 w-full border-b-2 border-neon-pink z-50" id="navbar">
-      <div class="max-w-7xl mx-auto px-4 py-3">
-        <div class="flex justify-between items-center">
-          <div class="flex items-center gap-4">
-            <div class="brutalist-neon p-2">
-              <svg class="w-6 h-6 neon-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
-              </svg>
-            </div>
-            <div>
-              <h1 class="text-xl font-bold neon-pink">BROWSER LOGGER</h1>
-              <p class="text-xs text-gray-400">DEBUGGING TOOL</p>
-            </div>
-          </div>
-          
-          <a href="https://github.com/cfeign/browser-logger" target="_blank" rel="noopener noreferrer" class="brutalist-neon px-4 py-2 text-center font-bold text-black">
-            <span class="neon-cyan">GITHUB</span>
-          </a>
-        </div>
+  <body class="bg-gray-950 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-gray-950/80 backdrop-blur border-b border-gray-800 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold glow">💾 Browser Logger</div>
+        <a href="https://github.com/cfeign/browser-logger" target="_blank" rel="noopener noreferrer" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 rounded-lg transition-smooth">
+          ⭐ GitHub
+        </a>
       </div>
     </nav>
 
     <!-- Content -->
-    <main class="pt-20">
+    <main class="pt-16">
       <slot />
     </main>
 
-    <!-- Brutalist Footer -->
-    <footer class="brutalist-neon mt-16 border-t-2 border-neon-pink">
-      <div class="max-w-7xl mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <!-- Brand section -->
-          <div class="space-y-4">
-            <div class="brutalist-neon p-3">
-              <svg class="w-8 h-8 neon-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold neon-pink">BROWSER LOGGER</h3>
-            <p class="text-sm text-gray-300">
-              REAL-TIME CONSOLE & NETWORK LOGGING TO SQLITE. 
-              <span class="neon-cyan font-bold">ZERO CLOUD. 100% YOURS.</span>
-            </p>
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-gray-950 py-12 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div>
+            <h3 class="font-bold text-lg mb-4">Browser Logger</h3>
+            <p class="text-gray-400">Real-time console & network logging to SQLite. Zero cloud. 100% yours.</p>
           </div>
-
-          <!-- Quick Links -->
-          <div class="space-y-4">
-            <h3 class="text-lg font-bold text-white mb-4">QUICK LINKS</h3>
-            <ul class="space-y-2">
-              <li>
-                <a href="https://github.com/cfeign/browser-logger" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-neon-pink transition-colors font-bold">
-                  🔗 GITHUB REPOSITORY
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/cfeign/browser-logger#readme" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-neon-cyan transition-colors font-bold">
-                  📖 DOCUMENTATION
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/cfeign/browser-logger/issues" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-neon-green transition-colors font-bold">
-                  🐛 REPORT ISSUE
-                </a>
-              </li>
+          <div>
+            <h3 class="font-bold text-lg mb-4">Quick Links</h3>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="https://github.com/cfeign/browser-logger" class="hover:text-emerald-400 transition-smooth">GitHub</a></li>
+              <li><a href="https://github.com/cfeign/browser-logger#readme" class="hover:text-emerald-400 transition-smooth">Documentation</a></li>
+              <li><a href="https://github.com/cfeign/browser-logger/issues" class="hover:text-emerald-400 transition-smooth">Report Issue</a></li>
             </ul>
           </div>
-
-          <!-- Creator section -->
-          <div class="space-y-4">
-            <h3 class="text-lg font-bold text-white mb-4">MADE BY</h3>
-            <div class="brutalist-neon p-4">
-              <div class="flex items-center gap-3 mb-3">
-                <div class="brutalist-neon w-12 h-12 flex items-center justify-center">
-                  <span class="text-lg font-bold neon-pink">CF</span>
-                </div>
-                <div>
-                  <a href="https://coryfeign.com" target="_blank" rel="noopener noreferrer" class="text-lg font-bold neon-cyan hover:text-neon-pink transition-colors">
-                    CORY FEIGN
-                  </a>
-                </div>
-              </div>
-              <p class="text-xs text-gray-400">
-                MULTIDISCIPLINARY DEVELOPER BUILDING TOOLS FOR THE AI-POWERED WORKFLOW.
-              </p>
-            </div>
+          <div>
+            <h3 class="font-bold text-lg mb-4">Made By</h3>
+            <a href="https://coryfeign.com" class="text-emerald-400 hover:text-emerald-300 transition-smooth font-semibold">
+              Cory Feign →
+            </a>
+            <p class="text-sm text-gray-400 mt-2">Multidisciplinary badass. Workflow optimizer. Open source builder.</p>
           </div>
         </div>
-
-        <!-- Bottom bar -->
-        <div class="brutalist-neon mt-8 p-4 text-center">
-          <p class="text-sm text-gray-300">
-            © 2024 <span class="neon-pink font-bold">BROWSER LOGGER</span>. MIT LICENSED. 
-            <span class="neon-cyan font-bold">PRIVACY-FIRST. LOCAL-FIRST. BUILT FOR DEVELOPERS.</span>
-          </p>
+        <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
+          <p>&copy; 2024 Browser Logger. MIT Licensed. <span class="text-emerald-400">Privacy-first. Local-first. Built for developers.</span></p>
         </div>
       </div>
     </footer>
 
-    <!-- Minimal scripts for brutalist effects -->
+    <!-- GSAP and animations -->
     <script>
-      // Simple scroll effect
-      window.addEventListener('scroll', () => {
-        const navbar = document.getElementById('navbar');
-        if (window.scrollY > 50) {
-          navbar.classList.add('shadow-neon-pink');
-        } else {
-          navbar.classList.remove('shadow-neon-pink');
-        }
-      });
-
-      // RGB split effect on hover
-      document.querySelectorAll('.brutalist-neon').forEach(element => {
-        element.addEventListener('mouseenter', () => {
-          element.style.filter = 'hue-rotate(5deg)';
-          element.style.transform = 'translate(1px, -1px)';
-        });
-        
-        element.addEventListener('mouseleave', () => {
-          element.style.filter = 'hue-rotate(0deg)';
-          element.style.transform = 'translate(0, 0)';
-        });
+      // View Transitions API for smooth page transitions
+      document.addEventListener('astro:page-load', () => {
+        console.log('Page loaded');
       });
     </script>
   </body>

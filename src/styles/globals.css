@@ -4,325 +4,85 @@
 
 @layer base {
   html {
-    scroll-behavior: auto;
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-brutalist-black text-gray-100 font-display;
-    background-image: 
-      radial-gradient(circle at 25% 25%, rgba(255, 0, 128, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 75% 75%, rgba(128, 0, 255, 0.1) 0%, transparent 50%),
-      linear-gradient(45deg, #0a0a0a 0%, #1a1a1a 100%);
-    font-family: 'Inter', system-ui, sans-serif;
-  }
-
-  * {
-    @apply border-transparent;
+    @apply bg-gray-950 text-gray-100 font-sans;
   }
 }
 
-@layer components {
-  /* Brutalist base styles */
-  .brutalist {
-    background: #1a1a1a;
-    border: 3px solid #333;
-    box-shadow: 
-      0 0 0 1px #333,
-      0 4px 0 0 #333,
-      0 8px 0 0 #222,
-      0 0 20px rgba(0, 0, 0, 0.8);
-  }
+/* Animated gradient background */
+.gradient-animated {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
 
-  .brutalist-neon {
-    @apply brutalist;
-    border-color: #ff0080;
-    box-shadow: 
-      0 0 0 1px #ff0080,
-      0 4px 0 0 #ff0080,
-      0 8px 0 0 #222,
-      0 0 20px rgba(255, 0, 128, 0.5);
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
   }
-
-  .neon-pink {
-    color: #ff0080;
-    text-shadow: 0 0 10px rgba(255, 0, 128, 0.8);
+  50% {
+    background-position: 100% 50%;
   }
-
-  .neon-purple {
-    color: #8000ff;
-    text-shadow: 0 0 10px rgba(128, 0, 255, 0.8);
-  }
-
-  .neon-blue {
-    color: #0040ff;
-    text-shadow: 0 0 10px rgba(0, 64, 255, 0.8);
-  }
-
-  .neon-cyan {
-    color: #00e5ff;
-    text-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
-  }
-
-  .neon-green {
-    color: #00ff80;
-    text-shadow: 0 0 10px rgba(0, 255, 128, 0.8);
-  }
-
-  .neon-yellow {
-    color: #ffdd00;
-    text-shadow: 0 0 10px rgba(255, 221, 0, 0.8);
-  }
-
-  /* Rainbow gradient text */
-  .rainbow-text {
-    @apply bg-clip-text text-transparent;
-    background: linear-gradient(45deg, #ff0000, #ff4000, #ff8000, #00ff00, #00e5ff, #8000ff);
-    background-size: 400% 400%;
-    animation: rainbow 4s ease-in-out infinite;
-  }
-
-  /* Hard shadow effects */
-  .hard-shadow {
-    box-shadow: 
-      0 0 0 1px #333,
-      0 4px 0 0 #333,
-      0 8px 0 0 #222;
-  }
-
-  .hard-shadow-neon {
-    box-shadow: 
-      0 0 0 1px currentColor,
-      0 4px 0 0 currentColor,
-      0 8px 0 0 #222,
-      0 0 20px rgba(255, 0, 128, 0.5);
-  }
-
-  /* Glitch effect */
-  .glitch-text {
-    animation: glitch 2s infinite;
-    font-family: 'retro', monospace;
-  }
-
-  /* Terminal styling */
-  .terminal {
-    background: #0a0a0a;
-    border: 2px solid #333;
-    font-family: 'retro', monospace;
-    color: #00e5ff;
-  }
-
-  .terminal-header {
-    background: #1a1a1a;
-    border-bottom: 2px solid #333;
-    font-family: 'retro', monospace;
-  }
-
-  /* Code blocks */
-  .code-brutalist {
-    background: #0a0a0a;
-    border: 2px solid #333;
-    font-family: 'retro', monospace;
-    color: #00ff80;
-    padding: 1rem;
-    margin: 1rem 0;
-  }
-
-  /* Grid pattern */
-  .grid-pattern {
-    background-image: 
-      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
-
-  /* Diagonal stripes */
-  .diagonal-stripes {
-    background: repeating-linear-gradient(
-      45deg,
-      rgba(255,255,255,0.02) 0px,
-      rgba(255,255,255,0.02) 10px,
-      transparent 10px,
-      transparent 20px
-    );
-  }
-
-  /* Compact layout */
-  .compact {
-    padding: 1rem;
-    margin: 0.5rem 0;
-  }
-
-  .compact-card {
-    @apply brutalist p-4 mb-4;
-  }
-
-  /* RGB split effect */
-  .rgb-split {
-    position: relative;
-  }
-
-  .rgb-split::before {
-    content: attr(data-text);
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    color: #ff0080;
-    filter: blur(1px);
-    z-index: -1;
-  }
-
-  .rgb-split::after {
-    content: attr(data-text);
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    color: #00e5ff;
-    filter: blur(1px);
-    z-index: -1;
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-@layer utilities {
-  .drop-shadow-neon {
-    filter: drop-shadow(0 0 10px currentColor);
-  }
+/* Typing animation */
+.typing {
+  overflow: hidden;
+  border-right: 3px solid #23d5ab;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
 
-  .scanline {
-    position: relative;
-    overflow: hidden;
+@keyframes typing {
+  from {
+    width: 0;
   }
-
-  .scanline::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
+  to {
     width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, rgba(255,255,255,0.3), transparent);
-    animation: scanline 3s infinite;
-  }
-
-  .pixel-border {
-    border-image: repeating-linear-gradient(45deg, #333 0, #333 2px, transparent 2px, transparent 4px) 1;
   }
 }
 
-/* Keyframes for brutalist effects */
-@keyframes glitch {
-  0%, 100% { transform: translate(0, 0); }
-  20% { transform: translate(-2px, 0); }
-  40% { transform: translate(2px, 0); }
-  60% { transform: translate(-1px, 0); }
-  80% { transform: translate(1px, 0); }
-}
-
-@keyframes rainbow {
-  0% { background-position: 0% 50%; }
-  25% { background-position: 100% 50%; }
-  50% { background-position: 100% 100%; }
-  75% { background-position: 0% 100%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes scanline {
-  0% { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
-}
-
-@keyframes rgbSplit {
-  0% { 
-    filter: hue-rotate(0deg);
-    transform: translate(0, 0);
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
   }
-  100% { 
-    filter: hue-rotate(15deg);
-    transform: translate(2px, -1px);
+  50% {
+    border-color: #23d5ab;
   }
 }
 
-@keyframes textFlicker {
-  0%, 100% { opacity: 1; }
-  40% { opacity: 0.3; }
-  60% { opacity: 1; }
+/* Glow effect */
+.glow {
+  text-shadow: 0 0 20px rgba(35, 213, 171, 0.5);
 }
 
-/* Override default styles */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'brutal', Arial, sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: -1px;
+.glow-box {
+  box-shadow: 0 0 30px rgba(35, 213, 171, 0.2), 0 0 60px rgba(35, 213, 171, 0.1);
 }
 
-p {
-  margin-bottom: 1rem;
-  line-height: 1.4;
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Code block styling */
 code {
-  font-family: 'retro', monospace;
-  background: #0a0a0a;
-  border: 1px solid #333;
-  padding: 0.2rem 0.4rem;
-  border-radius: 0;
+  @apply bg-gray-900 px-2 py-1 rounded text-sm font-mono text-emerald-300;
 }
 
 pre {
-  background: #0a0a0a;
-  border: 2px solid #333;
-  padding: 1rem;
-  font-family: 'retro', monospace;
-  overflow-x: auto;
-  margin: 1rem 0;
+  @apply bg-gray-900 p-4 rounded-lg overflow-x-auto;
 }
 
-/* Custom scrollbar - brutalist style */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
-  border: 1px solid #333;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #ff0080, #8000ff);
-  border: 1px solid #333;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #ff4080, #c040ff);
-}
-
-/* Selection */
-::selection {
-  background: rgba(255, 0, 128, 0.3);
-  color: white;
-}
-
-/* Focus styles */
-*:focus {
-  outline: 3px solid #ff0080;
-  outline-offset: 2px;
-}
-
-/* Hover effects */
-.brutalist:hover {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 0 0 1px #333,
-    0 6px 0 0 #333,
-    0 12px 0 0 #222;
-}
-
-.brutalist-neon:hover {
-  transform: translateY(-2px);
-  box-shadow: 
-    0 0 0 1px #ff0080,
-    0 6px 0 0 #ff0080,
-    0 12px 0 0 #222,
-    0 0 30px rgba(255, 0, 128, 0.8);
+pre code {
+  @apply bg-transparent px-0 py-0;
 }
